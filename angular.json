@@ -49,6 +49,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -113,6 +115,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -144,6 +147,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "blockbuster"
+    }
+  },
+  "defaultProject": "blockbuster",
+  "cli": {
+    "analytics": false
+  }
 }
