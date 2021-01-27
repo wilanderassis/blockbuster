@@ -1,0 +1,17 @@
+.car-boas-vindas{
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  color: #2c2c2c;
+  padding: 20px 0 0 20px;
+  box-shadow: 2px 4px 25px 3px #c3c3c3;
+}
+
+h2{
+  font-size: 28px;
+}
+
+p{
+  margin-top: 4px;
+  font-size: 16px;
+}

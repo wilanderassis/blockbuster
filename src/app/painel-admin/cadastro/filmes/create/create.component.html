@@ -1,14 +1,56 @@
-<mat-card>
-  <mat-card-title>Novo filme</mat-card-title>
-  <form>
+<div class="form-create">
+  <div class="card-create">
+    <h2>Adicionar Filme</h2>
+    <form>
+      <div class="container-principal">
 
-    <mat-form-field>
-      <input matInput placeholder="Nome"  name="name">
-    </mat-form-field>
+        <!-- COLUNA 1 -->
+        <div class="coluna1">
+          <!-- INPUT NOME -->
+          <div class="cont-input">
+            <label for="inputNome">Nome</label>
+            <input type="text" name="" id="inputNome" placeholder="Digite o nome do filme">
+          </div>
+          <!-- INPUT GÊNERO -->
+          <div class="cont-input">
+            <label for="inputGenero">Gênero</label>
+            <input type="text" name="inputGenero" id="inputGenero" placeholder="Digite o gênero do filme">
+          </div>
+          <!-- INPUT ANO -->
+          <div class="cont-input">
+            <label for="inputAno">Ano</label>
+            <input type="text" name="inputAno" id="inputAno" placeholder="Digite o ano do filme">
+          </div>
+          <!-- INPUT DIRETOR -->
+          <div class="cont-input">
+            <label for="inputDiretor">Diretor</label>
+            <input type="text" name="inputDiretor" id="inputDiretor" placeholder="Digite o nome do diretor do filme">
+          </div>
+          <!-- TEXTAREA DESCRIÇÃO -->
+          <div class="cont-input">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="w3review" rows="5" cols="50">
+          </textarea>
+          </div>
+        </div>
 
-    <mat-form-field>
-      <input matInput placeholder="Nome"  name="name">
-    </mat-form-field>
+        <!-- COLUNA 2 -->
+        <div class="coluna2">
+          <input type="file" id="inputImagem" (change)="onSelectFile($event)">
+          <div class="img-input">
+            <!-- ADICIONAR IMAGEM NO INPUT FILE -->
+            <img id="arquivo" name="arquivo" [src]="url" height="330" width="280">
+            <label for="inputImagem">Adicionar imagem</label>
+          </div>
+        </div>
 
-  </form>
-</mat-card>
+      </div>
+
+      <div class="cont-btn">
+        <button type="submit" class="btn-salvar">Salvar</button>
+        <button type="submit" class="btn-cancelar" routerLink="/crud-filme">Cancelar</button>
+      </div>
+
+    </form>
+  </div>
+</div>

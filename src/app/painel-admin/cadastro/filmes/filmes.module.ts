@@ -8,16 +8,13 @@ import { ReaderComponent } from './reader/reader.component';
 import { UpdateComponent } from './update/update.component';
 import { DeleteComponent } from './delete/delete.component';
 import { CrudFilmesComponent } from './crud-filmes/crud-filmes.component';
-
-/* ANGULAR MATERIAL */
-import { MatCardModule } from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 
+
+/* PÁGINAÇÃO */
+import { Ng2SearchPipeModule } from "ng2-search-filter";
+import { Ng2OrderModule } from "ng2-order-pipe";
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -30,14 +27,11 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FilmesRoutingModule,
-    MatCardModule,
-    MatButtonModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
     HttpClientModule,
-    MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
+    Ng2OrderModule,
+    Ng2SearchPipeModule
   ],
   exports:[
     ReaderComponent

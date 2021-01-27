@@ -1,5 +1,5 @@
 import { FilmesService } from './../filmes.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Filme } from '../filme.model';
 
 @Component({
@@ -11,6 +11,8 @@ export class ReaderComponent implements OnInit {
 
   filmes: Filme[]
   displayedColumns = ['id', 'nome', 'genero', 'ano', 'diretor', 'acao']
+  nome: string
+  p: number = 1
 
   constructor(
     private filmesService: FilmesService
@@ -23,6 +25,23 @@ export class ReaderComponent implements OnInit {
         console.log(this.filmes);
 
       })
+  }
+
+  pesquisarFilme() {
+    if (this.nome == '') {
+      this.ngOnInit()
+    } else {
+      this.filmes = this.filmes.filter((item) => {
+        return item.nome.toLowerCase().match(this.nome.toLowerCase())
+      })
+    }
+  }
+
+  key: string = 'id'
+  reverse: boolean = false
+  sort(key) {
+    this.key = key
+    this.reverse = !this.reverse
   }
 
 }

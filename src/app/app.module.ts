@@ -3,6 +3,7 @@ import { FilmesModule } from './painel-admin/cadastro/filmes/filmes.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,14 +15,6 @@ import { HomeComponent } from './painel-admin/cadastro/templates/home/home.compo
 import { PrincipalComponent } from './principal/principal.component';
 import { BoasVindasComponent } from './painel-admin/cadastro/templates/boas-vindas/boas-vindas.component';
 
-/* ANGULAR MATERIAL */
-import { MatCardModule } from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
 
 
 
@@ -42,13 +35,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     FilmesModule,
     UsuariosModule,
-    MatCardModule,
-    MatButtonModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
     HttpClientModule,
-    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

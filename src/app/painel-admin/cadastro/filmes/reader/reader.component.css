@@ -1,9 +1,15 @@
-.tabela {
-  width: 100%;
-  margin-top: -10px;
+.cont-tabela {
+  box-shadow: 2px 4px 25px 3px #c3c3c3;
+  padding: 10px;
+  margin-top: 20px;
+  width: 98%;
 }
 
-h3{
+.tabela {
+  width: 100%;
+}
+
+h3 {
   text-align: right;
   margin-right: 20px;
 }
@@ -24,10 +30,30 @@ h3{
   font-size: 18px;
 }
 
-.th-tabela{
-  font-size: 18px;
+.topo{
+  border-bottom: 1px solid #c3c3c3;
 }
 
-.mensagem-nula{
-  margin-top: 20px;
+th {
+  text-align: left;
+  border-bottom: 1px solid #c3c3c3;
+  padding-bottom: 10px;
 }
+
+td{
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.input-nome{
+  width: 300px;
+  margin: 10px;
+  height: 22px;
+  border: 1px solid #c4c4c4;
+  padding: 3px 10px;
+}
+
+.input-nome:focus{
+  outline-style: none;
+}
+
