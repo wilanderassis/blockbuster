@@ -1,0 +1,180 @@
+/* COMPONENTES PRINCIPAIS */
+
+input {
+  color: #181818;
+  font-size: 16px;
+}
+
+input:focus {
+  outline-style: none;
+}
+
+input[type=file] {
+  display: none;
+}
+
+/* LABEL DO BOTÃO IMAGEM */
+
+.coluna2 label {
+  background: #0062FF;
+  color: white;
+  border-radius: 3px;
+  padding: 10px 60px;
+  cursor: pointer;
+}
+
+.coluna2 label:hover {
+  background-color: #0252d3;
+}
+
+/* SELECT GENERO */
+
+.cont-input select {
+  height: 30px;
+  width: 102%;
+  border: 1px solid #afafaf;
+}
+
+.cont-input select :focus {
+  outline-style: none;
+}
+
+.select-option{
+  font-size: 16px;
+}
+
+.select-option:focus{
+  outline-style: none;
+}
+
+textarea {
+  padding: 10px;
+  color: #181818;
+  font-size: 16px;
+  width: 100%;
+}
+
+textarea:focus {
+  outline-style: none;
+}
+
+/* FORM */
+
+.form-create {
+  width: 100%;
+}
+
+.card-create {
+  box-shadow: 2px 4px 25px 3px #c3c3c3;
+}
+
+.card-create h2 {
+  padding: 20px 0 0 25px;
+}
+
+.container-principal {
+  width: 95%;
+  padding: 20px;
+  padding-bottom: 10px;
+  display: grid;
+  grid-template-areas: "coluna1 coluna2";
+}
+
+.coluna1 {
+  grid-area: coluna1;
+  margin-right: 45px;
+  width: 1020px;
+}
+
+.coluna1 label {
+  width: 200px;
+}
+
+.coluna1 input {
+  height: 28px;
+  width: 100%;
+  border: 1px solid #afafaf;
+  border-radius: 3px;
+  padding: 1px 10px;
+}
+
+.cont-input {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cont-input label {
+  margin-bottom: 5px;
+}
+
+.coluna2 {
+  grid-area: coluna2;
+  text-align: center;
+  justify-self: center;
+}
+
+.coluna2 input {
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.img-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.img-input img {
+  margin-bottom: 20px;
+}
+
+/* BOTÃO */
+
+.cont-btn {
+  width: 350px;
+  height: 50px;
+  padding-bottom: 30px;
+}
+
+.cont-btn button {
+  padding: 10px 35px;
+  margin: 0 0 0 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  transition: all .2s;
+}
+
+.cont-btn button:focus {
+  outline-style: none;
+}
+
+.btn-excluir {
+  background-color: #ff1500;
+}
+
+.btn-excluir:hover {
+  background-color: #bb0505;
+}
+
+.btn-cancelar {
+  background-color: #b1b1b1;
+}
+
+.btn-cancelar:hover {
+  background-color: #9c9c9c;
+}
+
+/* ==========VALIDAÇÕES========== */
+
+.small-valido {
+  color: green;
+}
+
+.small-invalido {
+  color: red;
+}

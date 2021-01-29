@@ -1,10 +1,10 @@
-import { UsuariosModule } from './painel-admin/cadastro/usuarios/usuarios.module';
-import { FilmesModule } from './painel-admin/cadastro/filmes/filmes.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 
+import { UsuariosModule } from './painel-admin/cadastro/usuarios/usuarios.module';
+import { FilmesModule } from './painel-admin/cadastro/filmes/filmes.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,8 +14,8 @@ import { FooterComponent } from './painel-admin/cadastro/templates/footer/footer
 import { HomeComponent } from './painel-admin/cadastro/templates/home/home.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { BoasVindasComponent } from './painel-admin/cadastro/templates/boas-vindas/boas-vindas.component';
-
-
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './login/auth.service';
 
 
 @NgModule({
@@ -27,6 +27,7 @@ import { BoasVindasComponent } from './painel-admin/cadastro/templates/boas-vind
     HomeComponent,
     PrincipalComponent,
     BoasVindasComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,7 @@ import { BoasVindasComponent } from './painel-admin/cadastro/templates/boas-vind
     UsuariosModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

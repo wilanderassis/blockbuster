@@ -15,19 +15,30 @@ h3 {
 }
 
 .acao {
-  width: 60px;
+  width: 55px;
   display: flex;
   justify-content: space-between;
+  margin-left: -5px;
 }
 
 .edit {
-  color: rgb(255, 100, 43);
-  font-size: 18px;
+  color: #fda137;
+  font-size: 19px;
+  transition: all .2s;
+}
+
+.edit:hover{
+  color: #d67505;
 }
 
 .delete {
-  color: rgb(180, 4, 4);
-  font-size: 18px;
+  color: #e90303;
+  font-size: 19px;
+  transition: all .2s;
+}
+
+.delete:hover{
+  color: #aa0303;
 }
 
 .topo{
@@ -55,5 +66,11 @@ td{
 
 .input-nome:focus{
   outline-style: none;
+}
+
+.paginação{
+  width: 100%;
+  text-align: end;
+  margin-top: 20px;
 }
 

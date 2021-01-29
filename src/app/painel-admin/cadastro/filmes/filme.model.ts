@@ -6,9 +6,8 @@ export class Filme {
   diretor: string
   descricao: string
   poster: Array<object>
-  constructor(id, nome, genero, ano, diretor, descricao, poster) {
-    this.id = id,
-      this.nome = nome,
+  constructor(nome, genero, ano, diretor, descricao, poster) {
+    this.nome = nome,
       this.genero = genero,
       this.ano = ano,
       this.diretor = diretor,

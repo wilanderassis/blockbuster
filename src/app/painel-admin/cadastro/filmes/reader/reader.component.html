@@ -9,6 +9,7 @@
         <th>Gênero</th>
         <th>Ano</th>
         <th>Diretor</th>
+        <th>Ação</th>
       </tr>
     </thead>
     <tbody>
@@ -18,10 +19,19 @@
         <td>{{filme.genero}}</td>
         <td>{{filme.ano}}</td>
         <td>{{filme.diretor}}</td>
+        <td>
+          <div class="acao">
+            <a class="edit" [routerLink]="['/filme-update',filme.id]"><i class="fas fa-edit" title="editar"></i></a>
+            <a class="delete" [routerLink]="['/filme-delete',filme.id]"><i class="fas fa-trash-alt" title="excluir"></i></a>
+          </div>
+        </td>
       </tr>
       <tr>
     </tbody>
-    <pagination-controls (pageChange)="p =$event"></pagination-controls>
   </table>
+
+  <div class="paginação">
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+  </div>
 
 </div>

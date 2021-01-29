@@ -15,7 +15,7 @@ input[type=file] {
 
 /* LABEL DO BOTÃO IMAGEM */
 
-.coluna2 label{
+.coluna2 label {
   background: #0062FF;
   color: white;
   border-radius: 3px;
@@ -23,8 +23,28 @@ input[type=file] {
   cursor: pointer;
 }
 
-.coluna2 label:hover{
-  background-color:  #0252d3;
+.coluna2 label:hover {
+  background-color: #0252d3;
+}
+
+/* SELECT GENERO */
+
+.cont-input select {
+  height: 30px;
+  width: 102%;
+  border: 1px solid #afafaf;
+}
+
+.cont-input select :focus {
+  outline-style: none;
+}
+
+.select-option{
+  font-size: 16px;
+}
+
+.select-option:focus{
+  outline-style: none;
 }
 
 textarea {
@@ -57,9 +77,7 @@ textarea:focus {
   padding: 20px;
   padding-bottom: 10px;
   display: grid;
-  grid-template-areas:
-  "coluna1 coluna2"
-  ;
+  grid-template-areas: "coluna1 coluna2";
 }
 
 .coluna1 {
@@ -109,7 +127,7 @@ textarea:focus {
   margin-top: 20px;
 }
 
-.img-input img{
+.img-input img {
   margin-bottom: 20px;
 }
 
@@ -128,6 +146,7 @@ textarea:focus {
   border-radius: 3px;
   cursor: pointer;
   color: white;
+  transition: all .2s;
 }
 
 .cont-btn button:focus {
@@ -148,4 +167,14 @@ textarea:focus {
 
 .btn-cancelar:hover {
   background-color: #9c9c9c;
+}
+
+/* ==========VALIDAÇÕES========== */
+
+.small-valido {
+  color: green;
+}
+
+.small-invalido {
+  color: red;
 }

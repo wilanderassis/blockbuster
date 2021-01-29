@@ -1,37 +1,74 @@
 <div class="form-create">
   <div class="card-create">
     <h2>Adicionar Filme</h2>
-    <form>
+    <form [formGroup]="formulario" (ngSubmit)="salvarFilme()">
       <div class="container-principal">
 
         <!-- COLUNA 1 -->
         <div class="coluna1">
+
           <!-- INPUT NOME -->
           <div class="cont-input">
             <label for="inputNome">Nome</label>
-            <input type="text" name="" id="inputNome" placeholder="Digite o nome do filme">
+            <input formControlName="nome" type="text" name="" id="inputNome" placeholder="Digite o nome do filme">
+            <!-- VALIDAÇÃO NOME -->
+            <small *ngIf="formulario.get('nome').valid && formulario.get('nome').touched"
+              class="small-valido">Ok</small>
+            <small *ngIf="!formulario.get('nome').valid && formulario.get('nome').touched" class="small-valido"
+              class="small-invalido">Preencha o campo corretamente!</small>
           </div>
+
           <!-- INPUT GÊNERO -->
           <div class="cont-input">
             <label for="inputGenero">Gênero</label>
-            <input type="text" name="inputGenero" id="inputGenero" placeholder="Digite o gênero do filme">
+            <select name="inputGenero" id="inputGenero" formControlName="genero">
+              <option class="select-option" value="">Selecione um gênero</option>
+              <option class="select-option" value="acao">Ação</option>
+              <option class="select-option" value="terror">Terror</option>
+              <option class="select-option" value="comedia">Comédia</option>
+              <option class="select-option" value="ficcao-fientifica">Ficção científica</option>
+            </select>
+            <!-- VALIDAÇÃO GÊNERO -->
+            <small *ngIf="formulario.get('genero').valid && formulario.get('genero').touched"
+              class="small-valido">Ok</small>
+            <small *ngIf="!formulario.get('genero').valid && formulario.get('genero').touched" class="small-valido"
+              class="small-invalido">Selecione um gênero para o filme!</small>
           </div>
+
           <!-- INPUT ANO -->
           <div class="cont-input">
             <label for="inputAno">Ano</label>
-            <input type="text" name="inputAno" id="inputAno" placeholder="Digite o ano do filme">
+            <input formControlName="ano" type="text" name="inputAno" id="inputAno" placeholder="Digite o ano do filme">
+            <!-- VALIDAÇÃO NOME -->
+            <small *ngIf="formulario.get('ano').valid && formulario.get('ano').touched" class="small-valido">Ok</small>
+            <small *ngIf="!formulario.get('ano').valid && formulario.get('ano').touched" class="small-valido"
+              class="small-invalido">Preencha o campo corretamente!</small>
           </div>
+
           <!-- INPUT DIRETOR -->
           <div class="cont-input">
             <label for="inputDiretor">Diretor</label>
-            <input type="text" name="inputDiretor" id="inputDiretor" placeholder="Digite o nome do diretor do filme">
+            <input formControlName="diretor" type="text" name="inputDiretor" id="inputDiretor"
+              placeholder="Digite o nome do diretor do filme">
+            <!-- VALIDAÇÃO NOME -->
+            <small *ngIf="formulario.get('diretor').valid && formulario.get('diretor').touched"
+              class="small-valido">Ok</small>
+            <small *ngIf="!formulario.get('diretor').valid && formulario.get('diretor').touched" class="small-valido"
+              class="small-invalido">Preencha o campo corretamente!</small>
           </div>
+
           <!-- TEXTAREA DESCRIÇÃO -->
           <div class="cont-input">
             <label for="descricao">Descrição</label>
-            <textarea id="descricao" name="w3review" rows="5" cols="50">
+            <textarea formControlName="descricao" id="descricao" name="w3review" rows="5" cols="50">
           </textarea>
+            <!-- VALIDAÇÃO NOME -->
+            <small *ngIf="formulario.get('descricao').valid && formulario.get('descricao').touched"
+              class="small-valido">Ok</small>
+            <small *ngIf="!formulario.get('descricao').valid && formulario.get('descricao').touched"
+              class="small-valido" class="small-invalido">Preencha o campo corretamente!</small>
           </div>
+
         </div>
 
         <!-- COLUNA 2 -->

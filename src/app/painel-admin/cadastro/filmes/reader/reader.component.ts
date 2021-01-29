@@ -22,8 +22,6 @@ export class ReaderComponent implements OnInit {
     this.filmesService.getFilmes()
       .subscribe((filmes) => {
         this.filmes = filmes
-        console.log(this.filmes);
-
       })
   }
 

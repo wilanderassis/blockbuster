@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'filmes', loadChildren: 'app/painel-admin/cadastro/filmes/filmes.module#FilmesModule' },
   { path: '', component: BoasVindasComponent },
   { path: '', component: ReaderComponent },
   { path: '', component: BoasVindasComponent },
