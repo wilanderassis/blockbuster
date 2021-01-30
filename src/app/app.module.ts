@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './painel-admin/cadastro/templates/header/header.component';
 import { NavComponent } from './painel-admin/cadastro/templates/nav/nav.component';
 import { FooterComponent } from './painel-admin/cadastro/templates/footer/footer.component';
-import { HomeComponent } from './painel-admin/cadastro/templates/home/home.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { BoasVindasComponent } from './painel-admin/cadastro/templates/boas-vindas/boas-vindas.component';
 import { LoginComponent } from './login/login.component';
@@ -24,7 +23,6 @@ import { AuthService } from './login/auth.service';
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    HomeComponent,
     PrincipalComponent,
     BoasVindasComponent,
     LoginComponent,

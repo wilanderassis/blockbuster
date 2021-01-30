@@ -21,8 +21,8 @@
         <td>{{filme.diretor}}</td>
         <td>
           <div class="acao">
-            <a class="edit" [routerLink]="['/filme-update',filme.id]"><i class="fas fa-edit" title="editar"></i></a>
-            <a class="delete" [routerLink]="['/filme-delete',filme.id]"><i class="fas fa-trash-alt" title="excluir"></i></a>
+            <a class="edit" [routerLink]="['/principal/update-filme',filme.id]"><i class="fas fa-edit" title="editar"></i></a>
+            <a class="delete" [routerLink]="['/principal/delete-filme',filme.id]"><i class="fas fa-trash-alt" title="excluir"></i></a>
           </div>
         </td>
       </tr>

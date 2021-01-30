@@ -36,8 +36,4 @@ export class UpdateComponent implements OnInit {
       })
   }
 
-  cancelar() {
-    this.router.navigate(['/crud-filme'])
-  }
-
 }
