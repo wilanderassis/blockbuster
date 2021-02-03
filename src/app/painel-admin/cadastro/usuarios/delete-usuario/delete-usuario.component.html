@@ -1,0 +1,41 @@
+<div class="form-create" *ngIf="usuario != undefined">
+  <div class="card-create">
+    <h2>Adicionar Filme</h2>
+    <form (ngSubmit)="deleteUsuario()">
+      <div class="container-principal">
+
+        <!-- COLUNA 1 -->
+        <div class="coluna1">
+
+          <!-- INPUT NOME -->
+          <div class="cont-input">
+            <label for="inputUsuario">Nome</label>
+            <input type="text" name="inputUsuario" id="inputUsuario" disabled [(ngModel)]="usuario.nome">
+            <!-- VALIDAÇÃO NOME -->
+          </div>
+
+          <!-- INPUT E-MAIL -->
+          <div class="cont-input">
+            <label for="inputEmail">E-mail</label>
+            <input type="text" name="inputEmail" id="inputEmail" disabled [(ngModel)]="usuario.email">
+            <!-- VALIDAÇÃO NOME -->
+          </div>
+
+          <!-- INPUT SENHA -->
+          <div class="cont-input">
+            <label for="inputSenha">Senha</label>
+            <input type="password" name="inputSenha" id="inputSenha" disabled [(ngModel)]="usuario.senha">
+            <!-- VALIDAÇÃO NOME -->
+          </div>
+
+        </div>
+      </div>
+
+      <div class="cont-btn">
+        <button type="submit" class="btn-excluir">Excluir</button>
+        <button type="button" class="btn-cancelar" routerLink="/principal/crud-usuario">Cancelar</button>
+      </div>
+
+    </form>
+  </div>
+</div>

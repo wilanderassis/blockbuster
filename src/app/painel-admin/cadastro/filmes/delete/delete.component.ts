@@ -34,7 +34,7 @@ export class DeleteComponent implements OnInit {
       this.filmesService.excluirFilme(params.id)
         .subscribe((filme) => {
           this.filme = filme
-          this.router.navigate(['/crud-filme'])
+          this.router.navigate(['/principal/crud-filme'])
         })
     })
   }

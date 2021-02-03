@@ -66,9 +66,8 @@ export class CreateComponent implements OnInit {
       this.filmesService.salvarFilme(filme)
         .subscribe((filme) => {
           this.filme = filme
-          console.log(this.filme);
         })
-        this.router.navigate(['/crud-filme'])
+        this.router.navigate(['/principal/crud-filme'])
     }
 
   }

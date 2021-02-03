@@ -1,0 +1,50 @@
+<div class="form-create">
+  <div class="card-create">
+    <h2>Adicionar Usuário</h2>
+    <form (ngSubmit)="salvarUsuario()" #formulario="ngForm">
+      <div class="container-principal">
+
+        <!-- COLUNA 1 -->
+        <div class="coluna1">
+
+          <!-- INPUT NOME -->
+          <div class="cont-input">
+            <label for="inputUsuario">Nome</label>
+            <input type="text" name="inputUsuario" id="inputUsuario" placeholder="Digite o nome do usuário"
+              [(ngModel)]="usuario.nome" required minlength="3" maxlength="150" ngModel #inputNome="ngModel">
+            <!-- VALIDAÇÃO NOME -->
+            <small class="small-valido" *ngIf="inputNome.valid">Ok</small>
+            <small class="small-invalido" *ngIf="inputNome.invalid && inputNome.touched">Campo inválido</small>
+          </div>
+
+          <!-- INPUT E-MAIL -->
+          <div class="cont-input">
+            <label for="inputEmail">E-mail</label>
+            <input type="text" name="inputEmail" id="inputEmail" placeholder="Digite o e-mail do usuário"
+              [(ngModel)]="usuario.email" required minlength="3" maxlength="150" email ngModel #inputEmail="ngModel">
+            <!-- VALIDAÇÃO NOME -->
+            <small class="small-valido" *ngIf="inputEmail.valid">Ok</small>
+            <small class="small-invalido" *ngIf="inputEmail.invalid && inputEmail.touched">Campo inválido</small>
+          </div>
+
+          <!-- INPUT SENHA -->
+          <div class="cont-input">
+            <label for="inputSenha">Senha</label>
+            <input type="password" name="inputSenha" id="inputSenha" placeholder="Digite a senha do usuário"
+              [(ngModel)]="usuario.senha" required minlength="3" maxlength="150" ngModel #inputSenha="ngModel">
+            <!-- VALIDAÇÃO NOME -->
+            <small class="small-valido" *ngIf="inputSenha.valid">Ok</small>
+            <small class="small-invalido" *ngIf="inputSenha.invalid && inputSenha.touched">Campo inválido</small>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="cont-btn">
+        <button type="submit" class="btn-salvar" >Salvar</button>
+        <button type="button" class="btn-cancelar" routerLink="/principal/crud-usuario">Cancelar</button>
+      </div>
+
+    </form>
+  </div>
+</div>

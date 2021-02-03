@@ -1,23 +1,23 @@
 <section class="tela-login">
+  <form (ngSubmit)="fazerLogin()">
+    <div class="caixa-login">
+      <h2>Login</h2>
 
-  <div class="caixa-login">
-    <h2>Login</h2>
-
-    <div class="cont-usuario">
-      <div class="input-usuario">
-        <label for="usuario">Usuário</label>
-        <input type="text" name="nome" id="nome" [(ngModel)]="usuario.nome">
+      <div class="cont-usuario">
+        <div class="input-usuario">
+          <label for="usuario">Usuário</label>
+          <input type="text" name="nome" id="nome" [(ngModel)]="usuario.nome">
+        </div>
       </div>
-    </div>
 
-    <div class="cont-senha">
-      <div class="input-senha">
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" [(ngModel)]="usuario.senha">
+      <div class="cont-senha">
+        <div class="input-senha">
+          <label for="senha">Senha</label>
+          <input type="password" name="senha" id="senha" [(ngModel)]="usuario.senha">
+        </div>
       </div>
+
+      <button type="submit">Login</button>
     </div>
-
-    <button type="submit" (click)="fazerLogin()">Login</button>
-  </div>
-
+  </form>
 </section>

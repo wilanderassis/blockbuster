@@ -32,7 +32,7 @@ export class UpdateComponent implements OnInit {
       .subscribe((filme) => {
         this.filme = filme
         console.log(filme);
-        this.router.navigate(['/crud-filme'])
+        this.router.navigate(['/principal/crud-filme'])
       })
   }
 

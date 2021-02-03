@@ -10,7 +10,6 @@ import { Filme } from '../filme.model';
 export class ReaderComponent implements OnInit {
 
   filmes: Filme[]
-  displayedColumns = ['id', 'nome', 'genero', 'ano', 'diretor', 'acao']
   nome: string
   p: number = 1
 
