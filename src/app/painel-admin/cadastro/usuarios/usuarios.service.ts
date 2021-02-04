@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment';
 import { map } from 'rxjs/operators';
 import { Usuario } from './usuario.model';
 import { Observable } from 'rxjs';
@@ -9,7 +10,7 @@ import { Injectable } from '@angular/core';
 })
 export class UsuariosService {
 
-  url = 'http://localhost:3000'
+  private readonly url = environment.API
 
   constructor(
     private http: HttpClient

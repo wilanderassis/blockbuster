@@ -1,13 +1,14 @@
 import { UsuariosService } from './../usuarios.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Usuario } from '../usuario.model';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-reader-usuario',
   templateUrl: './reader-usuario.component.html',
   styleUrls: ['./reader-usuario.component.css']
 })
-export class ReaderUsuarioComponent implements OnInit {
+export class ReaderUsuarioComponent implements OnInit, OnDestroy {
 
   usuarios: Usuario[]
   nome: string
@@ -21,7 +22,13 @@ export class ReaderUsuarioComponent implements OnInit {
     this.usuariosService.getUsuario()
       .subscribe((usuarios) => {
         this.usuarios = usuarios
-      })
+      },
+        (error) => console.log('Erro: ',error)
+      )
+  }
+
+  ngOnDestroy() {
+
   }
 
   pesquisarUsuario() {

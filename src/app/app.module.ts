@@ -16,6 +16,11 @@ import { BoasVindasComponent } from './painel-admin/cadastro/templates/boas-vind
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { PrincipalSiteComponent } from './site/views/principal-site/principal-site.component';
+import { HeaderSiteComponent } from './site/template/header-site/header-site.component';
+import { FooterSiteComponent } from './site/template/footer-site/footer-site.component';
+import { HomeSiteComponent } from './site/template/home-site/home-site.component';
+import { LoginSiteComponent } from './site/views/login-site/login-site.component';
 
 
 @NgModule({
@@ -27,6 +32,11 @@ import { AuthGuard } from './guards/auth.guard';
     PrincipalComponent,
     BoasVindasComponent,
     LoginComponent,
+    PrincipalSiteComponent,
+    HeaderSiteComponent,
+    FooterSiteComponent,
+    HomeSiteComponent,
+    LoginSiteComponent,
   ],
   imports: [
     BrowserModule,

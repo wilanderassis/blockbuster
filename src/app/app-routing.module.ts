@@ -1,3 +1,5 @@
+import { LoginSiteComponent } from './site/views/login-site/login-site.component';
+import { PrincipalSiteComponent } from './site/views/principal-site/principal-site.component';
 import { DeleteUsuarioComponent } from './painel-admin/cadastro/usuarios/delete-usuario/delete-usuario.component';
 import { UpdateUsuarioComponent } from './painel-admin/cadastro/usuarios/update-usuario/update-usuario.component';
 import { CreateUsuarioComponent } from './painel-admin/cadastro/usuarios/create-usuario/create-usuario.component';
@@ -14,9 +16,12 @@ import { CreateComponent } from './painel-admin/cadastro/filmes/create/create.co
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
+ /*  { path: '', component: PrincipalSiteComponent },
+  { path: 'logar', component: LoginSiteComponent }, */
+
   { path: '', component: LoginComponent },
   {
-    /* canActivate: [AuthGuard], */
+    canActivate: [AuthGuard],
     path: 'principal', component: PrincipalComponent, children: [
       { path: '', component: BoasVindasComponent },
       { path: 'crud-filme', component: CrudFilmesComponent },
