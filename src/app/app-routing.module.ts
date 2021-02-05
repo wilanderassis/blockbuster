@@ -16,7 +16,7 @@ import { CreateComponent } from './painel-admin/cadastro/filmes/create/create.co
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
- /*  { path: '', component: PrincipalSiteComponent },
+  /* { path: '', component: PrincipalSiteComponent },
   { path: 'logar', component: LoginSiteComponent }, */
 
   { path: '', component: LoginComponent },

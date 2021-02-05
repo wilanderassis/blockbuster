@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
@@ -22,6 +23,8 @@ import { FooterSiteComponent } from './site/template/footer-site/footer-site.com
 import { HomeSiteComponent } from './site/template/home-site/home-site.component';
 import { LoginSiteComponent } from './site/views/login-site/login-site.component';
 
+/* NGX-BOOTSTRAP */
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,8 @@ import { LoginSiteComponent } from './site/views/login-site/login-site.component
     FilmesModule,
     UsuariosModule,
     HttpClientModule,
+    ModalModule.forRoot(),
+    SharedModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { environment } from './../../../../environments/environment';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { Usuario } from './usuario.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -34,10 +34,12 @@ export class UsuariosService {
 
   atualizarUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>(`${this.url}/usuarios/${usuario.id}`, usuario)
+      .pipe(take(1))
   }
 
   deletarUsuario(id: number): Observable<Usuario> {
     return this.http.delete<Usuario>(`${this.url}/usuarios/${id}`)
+      .pipe(take(1))
   }
 
 }

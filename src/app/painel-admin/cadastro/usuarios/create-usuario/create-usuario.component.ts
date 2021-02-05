@@ -1,8 +1,10 @@
+import { AlertModalService } from './../../../../shared/alert-modal.service';
 import { Router } from '@angular/router';
 import { UsuariosService } from './../usuarios.service';
 import { Usuario } from './../usuario.model';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-create-usuario',
@@ -20,7 +22,8 @@ export class CreateUsuarioComponent implements OnInit {
 
   constructor(
     private usuariosService: UsuariosService,
-    private router: Router
+    private modal: AlertModalService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -37,10 +40,13 @@ export class CreateUsuarioComponent implements OnInit {
     } else {
       /* SE OS CAMPOS ESTIVEREM VÁLIDOS OS DADOS SÃO SALVOS */
       this.usuariosService.adicionarUsuario(this.usuario)
-        .subscribe((usuario) => {
-          this.usuario = usuario
-        })
-      this.router.navigate(['/principal/crud-usuario'])
+        .subscribe(
+          (success) => {
+            this.modal.showAlertSuccess('Usuário salvo com sucesso!')
+            this.location.back()
+          },
+          (error) => this.modal.showAlertDanger('Erro ao salvar usuário!'),
+        )
     }
   }
 

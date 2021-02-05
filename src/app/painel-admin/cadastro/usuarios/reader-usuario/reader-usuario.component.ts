@@ -1,7 +1,7 @@
+import { AlertModalService } from './../../../../shared/alert-modal.service';
 import { UsuariosService } from './../usuarios.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Usuario } from '../usuario.model';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-reader-usuario',
@@ -15,7 +15,8 @@ export class ReaderUsuarioComponent implements OnInit, OnDestroy {
   p: number = 1
 
   constructor(
-    private usuariosService: UsuariosService
+    private usuariosService: UsuariosService,
+    private alertModalService: AlertModalService
   ) { }
 
   ngOnInit(): void {
@@ -23,7 +24,10 @@ export class ReaderUsuarioComponent implements OnInit, OnDestroy {
       .subscribe((usuarios) => {
         this.usuarios = usuarios
       },
-        (error) => console.log('Erro: ',error)
+        (error) => {
+          this.handlerError()
+          console.log('Erro: ', error)
+        }
       )
   }
 
@@ -31,6 +35,7 @@ export class ReaderUsuarioComponent implements OnInit, OnDestroy {
 
   }
 
+  /* FILTRO DA TABELA PARA PESQUISAR POR NOME DO USUÁRIO */
   pesquisarUsuario() {
     if (this.nome == '') {
       this.ngOnInit()
@@ -41,11 +46,17 @@ export class ReaderUsuarioComponent implements OnInit, OnDestroy {
     }
   }
 
+  /* ALGORÍTMO PARA ODRDENAÇÃO */
   key: string = 'id'
   reverse: boolean = false
   sort(key) {
     this.key = key
     this.reverse = !this.reverse
+  }
+
+  /* MODAL DE ERRO */
+  handlerError() {
+    this.alertModalService.showAlertDanger('Erro ao listar usuários, tente novamente mais tarde!')
   }
 
 }
