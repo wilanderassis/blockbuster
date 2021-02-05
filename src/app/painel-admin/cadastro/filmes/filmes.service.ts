@@ -17,6 +17,7 @@ export class FilmesService {
 
   getFilmes(): Observable<Filme[]> {
     return this.http.get<Filme[]>(`${this.url}/filmes`)
+    .pipe(take(1))
   }
 
   salvarFilme(filme: Filme): Observable<Filme> {
@@ -26,6 +27,7 @@ export class FilmesService {
 
   getFilmesPorID(id: number): Observable<Filme> {
     return this.http.get<Filme>(`${this.url}/filmes/${id}`)
+    .pipe(take(1))
   }
 
   atualizarFilme(filme: Filme): Observable<Filme> {
