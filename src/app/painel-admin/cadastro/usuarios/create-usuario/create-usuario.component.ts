@@ -38,7 +38,7 @@ export class CreateUsuarioComponent implements OnInit {
         }
       }
     } else {
-      /* SE OS CAMPOS ESTIVEREM VÁLIDOS OS DADOS SÃO SALVOS */
+      /* SE OS CAMPOS ESTIVEREM VÁLIDOS OS DADOS SÃO SALVOS E RETORNA PARA ROTA ANTERIOR*/
       this.usuariosService.adicionarUsuario(this.usuario)
         .subscribe(
           (success) => {
