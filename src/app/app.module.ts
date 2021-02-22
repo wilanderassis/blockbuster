@@ -25,6 +25,12 @@ import { LoginSiteComponent } from './site/views/login-site/login-site.component
 
 /* NGX-BOOTSTRAP */
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AcaoComponent } from './site/components/acao/acao.component';
+import { TerrorComponent } from './site/components/terror/terror.component';
+import { ComediaComponent } from './site/components/comedia/comedia.component';
+import { FiccaoCientificaComponent } from './site/components/ficcao-cientifica/ficcao-cientifica.component';
+import { TodosComponent } from './site/components/todos/todos.component';
+import { FilmeDetalheComponent } from './site/components/filme-detalhe/filme-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,12 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     FooterSiteComponent,
     HomeSiteComponent,
     LoginSiteComponent,
+    AcaoComponent,
+    TerrorComponent,
+    ComediaComponent,
+    FiccaoCientificaComponent,
+    TodosComponent,
+    FilmeDetalheComponent,
   ],
   imports: [
     BrowserModule,

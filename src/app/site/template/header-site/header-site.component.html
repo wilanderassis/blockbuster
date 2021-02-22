@@ -1,14 +1,14 @@
 <!-- MENU SUPERIOR -->
 <header>
-  <a href="#" class="logo">Blockbuster</a>
+  <a href="#" class="logo">Teleplay Filmes</a>
   <nav>
     <input type="checkbox" id="check">
     <ul>
-      <li><a href="">Ação</a></li>
-      <li><a href="">Comédia</a></li>
-      <li><a href="">Terror</a></li>
-      <li><a href="">Ficção científica</a></li>
-      <li><a href="">Todos</a></li>
+      <li><a [routerLink]="['/acao']" routerLinkActive="active">Ação</a></li>
+      <li><a [routerLink]="['/terror']" routerLinkActive="active">Comédia</a></li>
+      <li><a [routerLink]="['/comedia']" routerLinkActive="active">Terror</a></li>
+      <li><a [routerLink]="['/ficcao-cientifica']" routerLinkActive="active">Ficção científica</a></li>
+      <li><a [routerLink]="['/todos']" routerLinkActive="active">Todos</a></li>
     </ul>
     <label for="check" class="checkbtn">
       <i class="fa fa-bars"></i>
@@ -21,3 +21,13 @@
     <li><a href=""><i class="fab fa-twitter-square"></i></a></li>
   </ul>
 </header>
+
+<div class="pesquisa">
+  <input type="text" placeholder="Digite o nome do filme" #inputPesquisa (input)="pesquisarFilme(inputPesquisa.value)">
+</div>
+
+<div *ngIf="pesquisaFilmes !== undefined" class="cont-lista">
+  <ul class="lista-pesquisa">
+    <li *ngFor="let filme of pesquisaFilmes | async"><a [routerLink]="['/filme-detalhe', filme.id]" routerLinkActive="router-link-active" >{{filme.nome}}</a></li>
+  </ul>
+</div>

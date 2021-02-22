@@ -1,7 +1,7 @@
 import { AlertModalService } from './../../../../shared/alert-modal.service';
-import { UsuariosService } from './../usuarios.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Usuario } from '../usuario.model';
+import { Usuarios2Service } from '../usuarios2.service';
 
 @Component({
   selector: 'app-reader-usuario',
@@ -15,12 +15,12 @@ export class ReaderUsuarioComponent implements OnInit, OnDestroy {
   p: number = 1
 
   constructor(
-    private usuariosService: UsuariosService,
+    private usuariosService: Usuarios2Service,
     private alertModalService: AlertModalService
   ) { }
 
   ngOnInit(): void {
-    this.usuariosService.getUsuario()
+    this.usuariosService.get()
       .subscribe((usuarios) => {
         this.usuarios = usuarios
       },

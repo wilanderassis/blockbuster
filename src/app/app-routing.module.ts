@@ -1,3 +1,10 @@
+import { TodosComponent } from './site/components/todos/todos.component';
+import { FiccaoCientificaComponent } from './site/components/ficcao-cientifica/ficcao-cientifica.component';
+import { ComediaComponent } from './site/components/comedia/comedia.component';
+import { TerrorComponent } from './site/components/terror/terror.component';
+import { AcaoComponent } from './site/components/acao/acao.component';
+import { HomeSiteComponent } from './site/template/home-site/home-site.component';
+import { FilmeDetalheComponent } from './site/components/filme-detalhe/filme-detalhe.component';
 import { LoginSiteComponent } from './site/views/login-site/login-site.component';
 import { PrincipalSiteComponent } from './site/views/principal-site/principal-site.component';
 import { DeleteUsuarioComponent } from './painel-admin/cadastro/usuarios/delete-usuario/delete-usuario.component';
@@ -16,24 +23,29 @@ import { CreateComponent } from './painel-admin/cadastro/filmes/create/create.co
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  /* { path: '', component: PrincipalSiteComponent },
-  { path: 'logar', component: LoginSiteComponent }, */
+  { path: '', component: HomeSiteComponent },
+  { path: 'acao', component: AcaoComponent },
+  { path: 'terror', component: TerrorComponent },
+  { path: 'comedia', component: ComediaComponent },
+  { path: 'ficcao-cientifica', component: FiccaoCientificaComponent },
+  { path: 'todos', component: TodosComponent },
+  { path: 'filme-detalhe/:id', component: FilmeDetalheComponent }
 
-  { path: '', component: LoginComponent },
-  {
-    canActivate: [AuthGuard],
-    path: 'principal', component: PrincipalComponent, children: [
-      { path: '', component: BoasVindasComponent },
-      { path: 'crud-filme', component: CrudFilmesComponent },
-      { path: 'create-filme', component: CreateComponent },
-      { path: 'update-filme/:id', component: UpdateComponent },
-      { path: 'delete-filme/:id', component: DeleteComponent },
-      { path: 'crud-usuario', component: CrudUsuariosComponent },
-      { path: 'create-usuario', component: CreateUsuarioComponent },
-      { path: 'update-usuario/:id', component: UpdateUsuarioComponent },
-      { path: 'delete-usuario/:id', component: DeleteUsuarioComponent },
-    ]
-  }
+  /*  { path: '', component: LoginComponent },
+   {
+     canActivate: [AuthGuard],
+     path: 'principal', component: PrincipalComponent, children: [
+       { path: '', component: BoasVindasComponent },
+       { path: 'crud-filme', component: CrudFilmesComponent },
+       { path: 'create-filme', component: CreateComponent },
+       { path: 'update-filme/:id', component: UpdateComponent },
+       { path: 'delete-filme/:id', component: DeleteComponent },
+       { path: 'crud-usuario', component: CrudUsuariosComponent },
+       { path: 'create-usuario', component: CreateUsuarioComponent },
+       { path: 'update-usuario/:id', component: UpdateUsuarioComponent },
+       { path: 'delete-usuario/:id', component: DeleteUsuarioComponent },
+     ]
+   } */
 ];
 
 @NgModule({

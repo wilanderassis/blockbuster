@@ -1,9 +1,9 @@
 import { AlertModalService } from './../../../../shared/alert-modal.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { UsuariosService } from './../usuarios.service';
+import { ActivatedRoute, Params} from '@angular/router';
 import { Usuario } from './../usuario.model';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Usuarios2Service } from '../usuarios2.service';
 
 @Component({
   selector: 'app-update-usuario',
@@ -15,7 +15,7 @@ export class UpdateUsuarioComponent implements OnInit {
   usuario: Usuario
 
   constructor(
-    private usuariosService: UsuariosService,
+    private usuariosService: Usuarios2Service,
     private route: ActivatedRoute,
     private modal: AlertModalService,
     private location: Location
@@ -23,7 +23,7 @@ export class UpdateUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.usuariosService.getUsuarioPorId(params.id)
+      this.usuariosService.getPorId(params.id)
         .subscribe((usuario) => {
           this.usuario = usuario
         })
@@ -31,7 +31,7 @@ export class UpdateUsuarioComponent implements OnInit {
   }
 
   atualizarUsuario() {
-    this.usuariosService.atualizarUsuario(this.usuario)
+    this.usuariosService.atualizar(this.usuario)
     .subscribe(
       (success) => {
         this.modal.showAlertSuccess('Usuário atualizado com sucesso!')

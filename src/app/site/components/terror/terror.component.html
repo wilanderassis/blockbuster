@@ -1,0 +1,13 @@
+<section class="categorias">
+  <div class="acao">
+    <h2><a href="#">Ação</a></h2>
+    <div class="container1">
+      <div *ngFor="let filme of filmes" class="col1">
+        <h3>{{filme.nome}}</h3>
+        <a [routerLink]="['/filme-detalhe', filme.id]"><img [src]="filme.poster[0].url"></a>
+      </div>
+    </div>
+    <br>
+    <hr>
+  </div>
+</section>

@@ -1,6 +1,6 @@
 <div class="form-create" *ngIf="usuario != undefined">
   <div class="card-create">
-    <h2>Adicionar Filme</h2>
+    <h2>Adicionar Usuário</h2>
     <form (ngSubmit)="deleteUsuario()">
       <div class="container-principal">
 
@@ -39,11 +39,3 @@
     </form>
   </div>
 </div>
-
-<ng-template #deleteModal>
-  <div class="modal-body text-center">
-    <p>Deseja excluir este usuário?</p>
-    <button type="button" class="btn btn-default" (click)="confirmarExclusao()">Sim</button>
-    <button type="button" class="btn btn-primary" (click)="naoConfirmarExclusao()">Não</button>
-  </div>
-</ng-template>
